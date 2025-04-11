@@ -83,6 +83,15 @@ label-studio start
 - On label studio, go to signups (Create a email address and password), create your project; upload your dataset and annotate. Once your are done export the dataset as YOLO
 - Follow this tutorial: https://www.youtube.com/watch?v=r0RspiLG260&t=442s
 - Next transfer your dataset to this https://colab.research.google.com/github/EdjeElectronics/Train-and-Deploy-YOLO-Models/blob/main/Train_YOLO_Models.ipynb#scrollTo=qcBdnOA9v85S, follow the instructions to create your own YOLO model (You can change the yolo model type based on your needs)
+
+# Using your own model
+- Transfer your own YOLO model into the raspberry pi (either through github or ssh)
+- Transfer the your_model.pt into yolo-model folder of the raspberry pi or copy the yolo_detect3.py codes onto the folder where your_model.pt is
+- Run this code
+```
+python3 yolo_detect3.py --model your_model.pt --resolution 640x480
+
+```
   
 # Change the code according to the type of camera that you used
 - For this project we used gstreamer and opencv to watch the video feed as it uses a Pi Night-Vision Camera (For me there was issues with installing Picamera2 as I'm using Debian Bookwarm)
