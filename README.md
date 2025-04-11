@@ -100,7 +100,7 @@ python3 yolo_detect3.py --model your_model.pt --resolution 640x480
 - my_model is am YOLOv11 model and my_model5 is a yolov5 model (both work quite poorly here)
 - my_model6 is a Yolov8n model trained under 320x320 resolution, while my_model2 is a Yolov8s model trained under 640x640 resolution (This a better at detection but very low fps compared to my_model6)
 
-- Example images
+# Example images
 ![image](https://github.com/user-attachments/assets/7f306bfb-03af-4713-be3a-6639a54239ee) ![image](https://github.com/user-attachments/assets/fb73c797-7367-4031-91d0-caf3cb12d88c)
 ![image](https://github.com/user-attachments/assets/171605cb-f68a-4c3d-b7f0-e9abf73e6307)
 
