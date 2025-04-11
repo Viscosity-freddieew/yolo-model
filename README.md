@@ -32,8 +32,9 @@ python3 --version
 ```
 - Create Virtual Environment
 ```
-python3 -m venv --system-site-packages venv
-source venv/bin/activate
+virtualenv -p python3 yolo-env
+source yolo-env/bin/activate
+
 ```
 - Enter cloned folder
 ```
@@ -45,13 +46,30 @@ pip install ultralytics
 ```
 - Download Torch, Torchvision, Opencv, Numpy, FFmpeg
 ```
-sudo -H pip install torch -f https://torch.kmtea.eu/whl/stable.html
-sudo -H pip install torchvision -f https://torch.kmtea.eu/whl/stable.html
+bash -c "pip install Cython==0.29.36"
 
+# install the packages using standard pip3 install
+packages=('scipy==1.5.2' 'pandas==1.1.3' 'librosa==0.8.0' 'tqdm==4.54.1' 'pytorch-lightning==1.1.6' 'tensorboardx==2.1' 'pyyaml==5.3.1' 'munch==2.5.0' 'fire==0.3.1' 'ipython==7.19.0')
+
+for i in "${packages[@]}"; do
+    pip install $i
+done
+
+# install the dependencies
+pip3 install setuptools==58.3.0
+
+#Torch & Torchvision
+pip install torch -f https://torch.kmtea.eu/whl/stable.html
+pip install torchvision -f https://torch.kmtea.eu/whl/stable.html
+
+#opencv
 pip install opencv-python opencv-contrib-python
 
+#FFmpeg
+sudo apt update
 sudo apt install -y libopencv-dev libglib2.0-dev libgtk-3-0 ffmpeg
 
+#Numpy
 pip3 install --upgrade --force-reinstall numpy
 
 sudo apt-get remove --purge python3-numpy
