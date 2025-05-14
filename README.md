@@ -55,7 +55,7 @@ for i in "${packages[@]}"; do
     pip install $i
 done
 
-# install the dependencies
+# Install the dependencies
 pip3 install setuptools==58.3.0
 
 #Torch & Torchvision
@@ -79,7 +79,7 @@ sudo apt-get install python3-numpy
 sudo apt-get install python3-numpy
 
 ```
-- Run the code with mentioned command below. (You can change my_model6 to any other yolo model, it should still work the same)
+- Run the code with command mentioned below. (You can change my_model6 to any other yolo model, it should still work the same. P.S. The my_model7.pt is trained on more pothole images.)
 
 ```
 python3 yolo_detect3.py --model my_model6.pt --resolution 640x480
